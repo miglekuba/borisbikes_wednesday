@@ -1,8 +1,16 @@
 require 'docking_station'
 describe DockingStation do
-
-    it "return it to respond to release_bike" do
-        expect (subject).to respond_to(:release_bike) #subject is equal to DockingStation.new
+    it "should respond to release the bike" do
+#arange
+dock = DockingStation.new
+#assert
+expect(dock).to respond_to(:release_bike)
+    end
+it "releases working bikes" do
+#arrange
+dock = DockingStation.new
+#act
+bike = dock.release_bike
+expect(bike).to be_working
 end
 end
-
