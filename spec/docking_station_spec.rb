@@ -1,16 +1,7 @@
 require 'docking_station'
-describe DockingStation do
-    it "should respond to release the bike" do
-#arange
-dock = DockingStation.new
-#assert
-expect(dock).to respond_to(:release_bike)
+describe DockingStation do 
+    it "should respond to the method release_bike" do
+        docking_station = DockingStation.new
+expect(docking_station).to respond_to(:release_bike)
     end
-it "releases working bikes" do
-#arrange
-dock = DockingStation.new
-#act
-bike = dock.release_bike
-expect(bike).to be_working
-end
 end
