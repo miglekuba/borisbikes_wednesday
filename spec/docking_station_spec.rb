@@ -14,9 +14,15 @@ expect(bike).to be_working
 #         dock = docking_station.dock
 # expect(docking_station).to respond_to(:dock)
 #     end
-
     it "should respond to dock bike with one argument" do
         dock = DockingStation.new
     expect(dock).to respond_to(:dock).with(1).argument
     end
+    it "should dock a bike" do
+        docking_station = DockingStation.new
+        bike = Bike.new
+    docking_station.leave_the_bike(bike)
+    expect(docking_station.bike.length).to eq 11
+    end
+
  end
