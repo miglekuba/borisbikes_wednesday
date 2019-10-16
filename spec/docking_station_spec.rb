@@ -7,6 +7,12 @@ expect(docking_station).to respond_to(:release_bike)
     it 'releases working bikes' do
         docking_station = DockingStation.new
         bike = docking_station.release_bike
-        expect(bike).to be_working
+expect(bike).to be_working
     end
+    it "should dock the bike" do
+        docking_station = DockingStation.new
+        dock = docking_station.dock
+expect(docking_station).to respond_to(:dock)
+    end
+
 end
