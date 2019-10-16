@@ -9,14 +9,14 @@ expect(docking_station).to respond_to(:release_bike)
         bike = docking_station.release_bike
 expect(bike).to be_working
     end
-    it "should respond to dock bike" do
-        docking_station = DockingStation.new
-        dock = docking_station.dock
-expect(docking_station).to respond_to(:dock)
-    end
+#     it "should respond to dock bike" do
+#         docking_station = DockingStation.new
+#         dock = docking_station.dock
+# expect(docking_station).to respond_to(:dock)
+#     end
+
     it "should respond to dock bike with one argument" do
-        docking_station = DockingStation.new
-        dock = docking_station.dock
-expect(docking_station).to respond_to(:dock).with(1).argument
+        dock = DockingStation.new
+    expect(dock).to respond_to(:dock).with(1).argument
     end
-end
+ end
