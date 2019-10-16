@@ -32,8 +32,19 @@ expect(bike).to be_working
     it "should raise an error if there are no available bikes" do
     docking_station = DockingStation.new
     expect {
-        3.times do docking_station.release_bike 
+        2.times do docking_station.release_bike 
         end
-    }.raise_error("ERROR! no bikes available")
+    }.to raise_error("ERROR! no bikes available")
+    end
+    it "should not accept more bikes than their capacity" do
+    docking_station = DockingStation.new
+    bike = Bike.new
+    docking_station.dock(bike)
+    
+    expect {
+        docking_station.max_capacity.times do 
+        docking_station.dock(bike)
+        end
+    }.to raise_error("No available space to dock your bike")
     end
 end

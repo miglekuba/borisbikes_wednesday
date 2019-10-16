@@ -8,7 +8,11 @@ class DockingStation
     end
 
     def release_bike
-        Bike.new
+        if @bikes.length == 0
+            raise "ERROR! no bikes available"
+        else
+            @bikes.pop
+        end
     end
     
     def dock(bike)
