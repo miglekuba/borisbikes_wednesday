@@ -21,8 +21,12 @@ expect(bike).to be_working
     it "should dock a bike" do
         docking_station = DockingStation.new
         bike = Bike.new
-    docking_station.leave_the_bike(bike)
-    expect(docking_station.bike.length).to eq 11
+    docking_station.dock(bike)
+    expect(docking_station.bikes.length).to eq 2
     end
-
+    it "should tell if the bike is docked" do
+    docking_station = DockingStation.new
+    bike = Bike.new
+    expect(docking_station.dock(bike)).to eq "The Bike is Docked"
+    end
  end
