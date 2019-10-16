@@ -9,7 +9,7 @@ expect(docking_station).to respond_to(:release_bike)
         bike = docking_station.release_bike
 expect(bike).to be_working
     end
-    it "should dock the bike" do
+    it "should respond to dock bike" do
         docking_station = DockingStation.new
         dock = docking_station.dock
 expect(docking_station).to respond_to(:dock)
