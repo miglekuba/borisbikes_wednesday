@@ -13,7 +13,7 @@ class DockingStation
     
     def dock(bike)
         @bikes << bike
-
+        return "The Bike is Docked"
     end
 
 end
